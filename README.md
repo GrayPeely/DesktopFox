@@ -10,4 +10,4 @@ It has 4 main behaviors
 -Following Ball
 
 Demo : 
-<video src="(https://github.com/user-attachments/assets/5578a11f-9a4a-4366-ae0b-835438145c04)" width="300" />
+<video src="https://github.com/user-attachments/assets/5578a11f-9a4a-4366-ae0b-835438145c04" width="300" />
