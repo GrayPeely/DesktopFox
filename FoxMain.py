@@ -7,6 +7,7 @@ from PIL import ImageTk
 
 import time
 import random
+import os
 
 eventNum = 1
 
@@ -46,11 +47,12 @@ foxPet.configure(background='#FF00FF')
 foxPet.wm_attributes('-transparentcolor', '#FF00FF')
 foxPet.wm_attributes('-topmost', True)
 
-sitFrames = [PhotoImage(file=f"fox sit" + str(i) + ".png") for i in range(1, 3)]
-walkFrames = [PhotoImage(file=f"fox walk" + str(i) + ".png") for i in range(1, 3)]
-carryFrames = [PhotoImage(file=f"fox carry" + str(i) + ".png") for i in range(1, 3)]
-placeholderImg = ImageTk.PhotoImage(Image.open("Shaeczar.jpg")) #i hate you tkinter for not supporting jpgs by default
-ballImg = PhotoImage(file="ball.png")
+#fix later, but get from images folder
+sitFrames = [PhotoImage(file=os.path.join("Images", "fox sit" + str(i) + ".png")) for i in range(1, 3)]
+walkFrames = [PhotoImage(file = os.path.join("Images", "fox walk" + str(i) + ".png")) for i in range(1, 3)]
+carryFrames = [PhotoImage(file=f"Images/fox carry" + str(i) + ".png") for i in range(1, 3)]
+placeholderImg = ImageTk.PhotoImage(Image.open(os.path.join("Images", "Shaeczar.jpg"))) #i hate you tkinter for not supporting jpgs by default
+ballImg = PhotoImage(file=os.path.join("Images","ball.png"))
 
 
 reversedwalkFrames = []
@@ -61,7 +63,7 @@ for frame in walkFrames:
     flipped = imageToFlip.transpose(Image.FLIP_LEFT_RIGHT)
     reversedwalkFrames.append(ImageTk.PhotoImage(flipped))
 
-sleepFrames = [PhotoImage(file=f"fox sit" + str(i) + ".png") for i in range(1, 3)]
+#sleepFrames = [PhotoImage(file=f"fox sit" + str(i) + ".png") for i in range(1, 3)]
 frameNum = 0
 frameWait = 0
 
