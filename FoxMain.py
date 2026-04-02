@@ -8,6 +8,7 @@ from PIL import ImageTk
 import time
 import random
 import os
+import sys
 
 eventNum = 1
 
@@ -47,13 +48,31 @@ foxPet.configure(background='#FF00FF')
 foxPet.wm_attributes('-transparentcolor', '#FF00FF')
 foxPet.wm_attributes('-topmost', True)
 
-#fix later, but get from images folder
-sitFrames = [PhotoImage(file=os.path.join("Images", "fox sit" + str(i) + ".png")) for i in range(1, 3)]
-walkFrames = [PhotoImage(file = os.path.join("Images", "fox walk" + str(i) + ".png")) for i in range(1, 3)]
-carryFrames = [PhotoImage(file=f"Images/fox carry" + str(i) + ".png") for i in range(1, 3)]
-placeholderImg = ImageTk.PhotoImage(Image.open(os.path.join("Images", "Shaeczar.jpg"))) #i hate you tkinter for not supporting jpgs by default
-ballImg = PhotoImage(file=os.path.join("Images","ball.png"))
+def resource_path(relative_path): #https://stackoverflow.com/questions/31836104/pyinstaller-and-onefile-how-to-include-an-image-in-the-exe-file
+    try:
+        base_path = sys._MEIPASS
+    except Exception:
+        base_path = os.path.abspath(".")
 
+    return os.path.join(base_path, relative_path)
+
+#fix later, but get from images folder
+#sitFrames = [PhotoImage(file=os.path.join("Images", resource_path("fox sit" + str(i) + ".png"))) for i in range(1, 3)]
+#walkFrames = [PhotoImage(file = os.path.join("Images", "fox walk" + str(i) + ".png")) for i in range(1, 3)]
+#carryFrames = [PhotoImage(file="Images/fox carry" + str(i) + ".png") for i in range(1, 3)]
+#placeholderImg = ImageTk.PhotoImage(Image.open(os.path.join("Images", "Shaeczar.jpg"))) #i hate you tkinter for not supporting jpgs by default
+#ballImg = PhotoImage(file=os.path.join("Images","ball.png"))
+
+#pyinstaller is weird and needs to use resource_path
+sitFrames = [PhotoImage(file=resource_path("Images/fox sit" + str(i) + ".png")) for i in range(1, 3)]
+
+walkFrames = [PhotoImage(file=resource_path("Images/fox walk" + str(i) + ".png")) for i in range(1, 3)]
+
+carryFrames = [PhotoImage(file=resource_path("Images/fox carry" + str(i) + ".png")) for i in range(1, 3)]
+
+placeholderImg = ImageTk.PhotoImage(Image.open(resource_path("Images/Shaeczar.jpg")))
+
+ballImg = PhotoImage(file=resource_path("Images/ball.png"))
 
 reversedwalkFrames = []
 
