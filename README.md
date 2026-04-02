@@ -9,5 +9,9 @@ It has 4 main behaviors
 -Dragged (Picking up w/ Mouse)
 -Following Ball
 
+To install : 
+Download dist.zip and unpack.
+From there, navigate into the FoxMain folder, and there will be an exe. 
+
 Demo : 
 <video src="https://github.com/user-attachments/assets/5578a11f-9a4a-4366-ae0b-835438145c04" width="300" />
