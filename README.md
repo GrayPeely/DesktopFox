@@ -17,12 +17,13 @@ Demo :
 <video src="https://github.com/user-attachments/assets/5578a11f-9a4a-4366-ae0b-835438145c04" width="300" />
 
 To install : 
-Navigate to latest release
-Install exe
-Finished!
-Just note that to close, you'll need to use task manager and find FoxMain
+Navigate to latest release  
+Install exe  
+Finished!  
+Just note that to close, you'll need to use task manager and find FoxMain  
 
 
-I developed this in python, relying on the tkinter library for the gui elements.
-I used the PIL library in order to reverse frames to deter from making more images than needed.
+I developed this in python, relying on the tkinter library for the gui elements.  
+I used the PIL library in order to reverse frames to deter from making more images than needed.  
+All pixel art made by me!
 
